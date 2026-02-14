@@ -1,0 +1,105 @@
+# PaperDownloader 配置文件
+
+# 代理配置
+proxy:
+  # 海外代理 (用于 Unpaywall、Semantic Scholar 等)
+  overseas:
+    http: "http://127.0.0.1:7897"
+    https: "http://127.0.0.1:7897"
+  # 中国大学内网 (用于 Google Scholar、ResearchGate、Sci-Hub)
+  china_network: null
+
+# 下载配置
+download:
+  # 输出目录
+  output_dir: "ris_downloads"
+  # 最大并发数
+  max_workers: 3
+  # 最大重试次数
+  max_retries: 1
+  # 请求超时 (秒)
+  timeout: 15
+  # 下载超时 (秒)
+  download_timeout: 30
+  # 启用 PDF 验证
+  validate_pdf: true
+  # 启用文件去重
+  deduplicate: true
+  # 启用进度条
+  show_progress: true
+
+# 下载源配置
+sources:
+  # 按优先级顺序
+  priority:
+    - Unpaywall
+    - CORE
+    - Semantic Scholar
+    - Sci-Hub
+  
+  # 源特定配置
+  Unpaywall:
+    enabled: true
+    email: "894643096@qq.com"
+  
+  Sci-Hub:
+    enabled: true
+    proxy: "http://127.0.0.1:7897"
+    domains:
+      - "https://sci-hub.se"
+      - "https://sci-hub.st"
+      - "https://sci-hub.ru"
+      - "https://sci-hub.wf"
+      - "https://sci-hub.do"
+      - "https://sci-hub.yt"
+      - "https://sci-hub.ren"
+  
+  Semantic Scholar:
+    enabled: true
+    timeout: 20
+  
+  CORE:
+    enabled: true
+  
+  arXiv:
+    enabled: false
+  
+  "Open Access Button":
+    enabled: false
+    email: "894643096@qq.com"
+  
+  "Europe PMC":
+    enabled: false
+  
+  PubMed:
+    enabled: false
+  
+  Paperity:
+    enabled: false
+  
+  "Google Scholar":
+    enabled: false
+    timeout: 20
+  
+  ResearchGate:
+    enabled: false
+    timeout: 20
+
+# 报告配置
+report:
+  # 生成 HTML 报告
+  generate_html: true
+  # 生成文本日志
+  generate_text_log: true
+  # 实时更新报告 (每N秒)
+  realtime_update: false
+  update_interval: 5
+
+# 日志配置
+logging:
+  # 日志级别: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  # 日志文件
+  file: "ris_downloads/downloader.log"
+  # 控制台输出
+  console: true

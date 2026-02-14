@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文献下载报告 - 2026-02-14 12:52:50</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.1em; opacity: 0.9; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .stat-value { font-size: 2.5em; font-weight: bold; color: #667eea; }
+        .stat-label { color: #6c757d; font-size: 0.9em; margin-top: 5px; }
+        .success .stat-value { color: #28a745; }
+        .failed .stat-value { color: #dc3545; }
+        .progress-bar {
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            margin: 20px 30px;
+            overflow: hidden;
+            display: flex;
+        }
+        .progress-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .progress-fill.success { background: linear-gradient(90deg, #28a745, #34d399); }
+        .progress-fill.failed { background: linear-gradient(90deg, #dc3545, #f87171); }
+        .items { padding: 30px; }
+        .items h2 { margin-bottom: 20px; color: #333; }
+        .item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .item.success { border-left: 5px solid #28a745; }
+        .item.failed { border-left: 5px solid #dc3545; }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .item-doi { font-weight: bold; font-size: 1.1em; color: #333; }
+        .item-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .item-status.success { background: #d4edda; color: #155724; }
+        .item-status.failed { background: #f8d7da; color: #721c24; }
+        .item-details { font-size: 0.9em; color: #6c757d; line-height: 1.6; }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            margin-right: 5px;
+        }
+        .badge.source { background: #007bff; color: white; }
+        .badge.retry { background: #ffc107; color: #333; }
+        .attempt-log {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-size: 0.85em;
+        }
+        .attempt { margin: 5px 0; padding: 5px; background: white; border-radius: 3px; }
+        .attempt.success { border-left: 3px solid #28a745; }
+        .attempt.failed { border-left: 3px solid #dc3545; }
+        .official-links {
+            margin-top: 15px;
+            padding: 12px;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            border-radius: 8px;
+            border: 1px solid #ffcdd2;
+        }
+        .official-links-title {
+            font-weight: bold;
+            color: #c62828;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        .official-link {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 3px;
+            background: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            transition: all 0.2s;
+        }
+        .official-link:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        .official-link.doi { color: #1565c0; }
+        .official-link.scholar { color: #f9a825; }
+        .official-link.rg { color: #00bcd4; }
+        .official-link.pmc { color: #388e3c; }
+        .official-link.scihub { color: #e53935; }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 文献下载报告</h1>
+            <p class="subtitle">v4.0 模块化版本 - 2026-02-14 12:52:50</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">8</div>
+                <div class="stat-label">总文献数</div>
+            </div>
+            <div class="stat-card success">
+                <div class="stat-value">3</div>
+                <div class="stat-label">成功下载</div>
+            </div>
+            <div class="stat-card failed">
+                <div class="stat-value">5</div>
+                <div class="stat-label">下载失败</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">37.5%</div>
+                <div class="stat-label">成功率</div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill success" style="width: 37.5%">
+                3 成功
+            </div>
+            <div class="progress-fill failed" style="width: 62.5%">
+                5 失败
+            </div>
+        </div>
+
+        <div class="items">
+            <h2>📋 下载详情</h2>
+
+            <div class="item failed">
+                <div class="item-header">
+                    <span class="item-doi">[1] 10.1002/adma.202520491</span>
+                    <span class="item-status failed">❌ 失败</span>
+                </div>
+                <div class="item-details">
+
+                    <div class="attempt-log">
+                        <strong>尝试记录:</strong>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Unpaywall</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">CORE</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Semantic Scholar</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Sci-Hub</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                    </div>
+
+                    <div class="official-links">
+                        <div class="official-links-title">📥 官方下载通道 (手动下载)</div>
+                        <div><a href="https://doi.org/10.1002/adma.202520491" target="_blank" class="official-link doi">🔗 DOI 官方</a> | <a href="https://scholar.google.com/scholar?q=10.1002%2Fadma.202520491" target="_blank" class="official-link scholar">🎓 Google Scholar</a> | <a href="https://www.researchgate.net/search?q=10.1002%2Fadma.202520491" target="_blank" class="official-link rg">📚 ResearchGate</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/?term=10.1002%2Fadma.202520491" target="_blank" class="official-link pmc">🧬 PubMed Central</a> | <a href="https://sci-hub.se/10.1002/adma.202520491" target="_blank" class="official-link scihub">⚠️ Sci-Hub</a></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item failed">
+                <div class="item-header">
+                    <span class="item-doi">[2] 10.1016/j.apenergy.2025.126643</span>
+                    <span class="item-status failed">❌ 失败</span>
+                </div>
+                <div class="item-details">
+
+                    <div class="attempt-log">
+                        <strong>尝试记录:</strong>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Unpaywall</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">CORE</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Semantic Scholar</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Sci-Hub</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                    </div>
+
+                    <div class="official-links">
+                        <div class="official-links-title">📥 官方下载通道 (手动下载)</div>
+                        <div><a href="https://doi.org/10.1016/j.apenergy.2025.126643" target="_blank" class="official-link doi">🔗 DOI 官方</a> | <a href="https://scholar.google.com/scholar?q=10.1016%2Fj.apenergy.2025.126643" target="_blank" class="official-link scholar">🎓 Google Scholar</a> | <a href="https://www.researchgate.net/search?q=10.1016%2Fj.apenergy.2025.126643" target="_blank" class="official-link rg">📚 ResearchGate</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/?term=10.1016%2Fj.apenergy.2025.126643" target="_blank" class="official-link pmc">🧬 PubMed Central</a> | <a href="https://sci-hub.se/10.1016/j.apenergy.2025.126643" target="_blank" class="official-link scihub">⚠️ Sci-Hub</a></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item failed">
+                <div class="item-header">
+                    <span class="item-doi">[3] 10.1002/smtd.202501816</span>
+                    <span class="item-status failed">❌ 失败</span>
+                </div>
+                <div class="item-details">
+
+                    <div class="attempt-log">
+                        <strong>尝试记录:</strong>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Unpaywall</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">CORE</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Semantic Scholar</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Sci-Hub</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                    </div>
+
+                    <div class="official-links">
+                        <div class="official-links-title">📥 官方下载通道 (手动下载)</div>
+                        <div><a href="https://doi.org/10.1002/smtd.202501816" target="_blank" class="official-link doi">🔗 DOI 官方</a> | <a href="https://scholar.google.com/scholar?q=10.1002%2Fsmtd.202501816" target="_blank" class="official-link scholar">🎓 Google Scholar</a> | <a href="https://www.researchgate.net/search?q=10.1002%2Fsmtd.202501816" target="_blank" class="official-link rg">📚 ResearchGate</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/?term=10.1002%2Fsmtd.202501816" target="_blank" class="official-link pmc">🧬 PubMed Central</a> | <a href="https://sci-hub.se/10.1002/smtd.202501816" target="_blank" class="official-link scihub">⚠️ Sci-Hub</a></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item failed">
+                <div class="item-header">
+                    <span class="item-doi">[4] 10.1002/cssc.202401415</span>
+                    <span class="item-status failed">❌ 失败</span>
+                </div>
+                <div class="item-details">
+
+                    <div class="attempt-log">
+                        <strong>尝试记录:</strong>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Unpaywall</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">CORE</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Semantic Scholar</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Sci-Hub</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                    </div>
+
+                    <div class="official-links">
+                        <div class="official-links-title">📥 官方下载通道 (手动下载)</div>
+                        <div><a href="https://doi.org/10.1002/cssc.202401415" target="_blank" class="official-link doi">🔗 DOI 官方</a> | <a href="https://scholar.google.com/scholar?q=10.1002%2Fcssc.202401415" target="_blank" class="official-link scholar">🎓 Google Scholar</a> | <a href="https://www.researchgate.net/search?q=10.1002%2Fcssc.202401415" target="_blank" class="official-link rg">📚 ResearchGate</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/?term=10.1002%2Fcssc.202401415" target="_blank" class="official-link pmc">🧬 PubMed Central</a> | <a href="https://sci-hub.se/10.1002/cssc.202401415" target="_blank" class="official-link scihub">⚠️ Sci-Hub</a></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item failed">
+                <div class="item-header">
+                    <span class="item-doi">[5] 10.3390/pr8020248</span>
+                    <span class="item-status failed">❌ 失败</span>
+                </div>
+                <div class="item-details">
+
+                    <div class="attempt-log">
+                        <strong>尝试记录:</strong>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Unpaywall</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">CORE</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Semantic Scholar</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Sci-Hub</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                    </div>
+
+                    <div class="official-links">
+                        <div class="official-links-title">📥 官方下载通道 (手动下载)</div>
+                        <div><a href="https://doi.org/10.3390/pr8020248" target="_blank" class="official-link doi">🔗 DOI 官方</a> | <a href="https://scholar.google.com/scholar?q=10.3390%2Fpr8020248" target="_blank" class="official-link scholar">🎓 Google Scholar</a> | <a href="https://www.researchgate.net/search?q=10.3390%2Fpr8020248" target="_blank" class="official-link rg">📚 ResearchGate</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/?term=10.3390%2Fpr8020248" target="_blank" class="official-link pmc">🧬 PubMed Central</a> | <a href="https://sci-hub.se/10.3390/pr8020248" target="_blank" class="official-link scihub">⚠️ Sci-Hub</a></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item success">
+                <div class="item-header">
+                    <span class="item-doi">[6] 10.1021/acsami.1c08462</span>
+                    <span class="item-status success">✅ 成功</span>
+                </div>
+                <div class="item-details">
+
+                    <p><strong>下载来源:</strong> <span class="badge source">CORE</span></p>
+                    <p><strong>文件路径:</strong> ris_downloads/2021-ACS APPLIED MATERIALS &amp; INTERFACES-Kundu-CORE.pdf</p>
+                    <p><strong>文件大小:</strong> 5,622,853 bytes (5491.1 KB)</p>
+
+                    <div class="attempt-log">
+                        <strong>尝试记录:</strong>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Unpaywall</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt success">
+                            ✅ <span class="badge source">CORE</span>
+                            <span class="badge retry">重试 #1</span>
+                            success
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item success">
+                <div class="item-header">
+                    <span class="item-doi">[7] 10.1016/j.ijhydene.2025.02.257</span>
+                    <span class="item-status success">✅ 成功</span>
+                </div>
+                <div class="item-details">
+
+                    <p><strong>下载来源:</strong> <span class="badge source">CORE</span></p>
+                    <p><strong>文件路径:</strong> ris_downloads/2025-INTERNATIONAL JOURNAL OF HYDROGEN ENERGY-Anand-CORE.pdf</p>
+                    <p><strong>文件大小:</strong> 1,082,043 bytes (1056.7 KB)</p>
+
+                    <div class="attempt-log">
+                        <strong>尝试记录:</strong>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Unpaywall</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt success">
+                            ✅ <span class="badge source">CORE</span>
+                            <span class="badge retry">重试 #1</span>
+                            success
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item success">
+                <div class="item-header">
+                    <span class="item-doi">[8] 10.3390/en15207508</span>
+                    <span class="item-status success">✅ 成功</span>
+                </div>
+                <div class="item-details">
+
+                    <p><strong>下载来源:</strong> <span class="badge source">CORE</span></p>
+                    <p><strong>文件路径:</strong> ris_downloads/2022-ENERGIES-Bespalko-CORE.pdf</p>
+                    <p><strong>文件大小:</strong> 1,150,182 bytes (1123.2 KB)</p>
+
+                    <div class="attempt-log">
+                        <strong>尝试记录:</strong>
+
+                        <div class="attempt failed">
+                            ❌ <span class="badge source">Unpaywall</span>
+                            <span class="badge retry">重试 #1</span>
+                            failed
+                        </div>
+
+                        <div class="attempt success">
+                            ✅ <span class="badge source">CORE</span>
+                            <span class="badge retry">重试 #1</span>
+                            success
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>📅 生成时间: 2026-02-14 12:54:08</p>
+            <p>🚀 多源并发下载 | 最大重试次数: 0 | 并发数: 3</p>
+        </div>
+    </div>
+</body>
+</html>

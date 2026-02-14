@@ -1,0 +1,369 @@
+﻿TY  - JOUR
+AU  - Miao, DF
+AU  - Li, JY
+AU  - Ren, JT
+AU  - Chen, ZW
+TI  - Exploring the Potential of Ni-Based Hydrogen Evolution Catalysts in Anion Exchange Membrane Water Electrolyzer
+T2  - ADVANCED MATERIALS
+LA  - English
+KW  - alkaline electrolyte
+KW  - anion exchange membrane water electrolyzer
+KW  - hydrogen energy
+KW  - hydrogen evolution reaction
+KW  - nickel-based catalysts
+KW  - ALKALINE-MEDIUM
+KW  - REVERSE CURRENT
+KW  - GREEN HYDROGEN
+KW  - PURE WATER
+KW  - PERFORMANCE
+KW  - ELECTROCATALYSTS
+KW  - DEGRADATION
+KW  - STABILITY
+KW  - DFT
+KW  - CHALLENGES
+AB  - The pressing need for sustainable hydrogen production has spotlighted anion exchange membrane water electrolyzer (AEMWE) as a promising technology, due to its potential for cost-effective and efficient hydrogen evolution. Nickel (Ni)-based catalysts have emerged as pivotal players in this domain, offering a compelling alternative to noble metal catalysts for the hydrogen evolution reaction (HER) in AEMWE. Despite their widespread use, challenges such as insufficient activity, conductivity, and long-term stability under alkaline conditions hinder their commercial scalability. This review provides a systematic exploration of Ni-based catalysts for HER in AEMWE, beginning with an in-depth analysis of design principles, including reaction mechanisms, key performance descriptors, and their interrelationships. Subsequently, we categorize advanced regulation strategies for Ni-based HER catalysts into distinct approaches, offering a critical evaluation of catalyst design, synthesis methods, electrocatalytic performance, and representative examples alongside current limitations. The diverse types of Ni-based HER catalysts, including metals/alloys, oxides/hydroxides, and Ni-based composites, are examined, highlighting their respective advantages and drawbacks. We also review the latest research progress on Ni-based catalysts in practical AEMWE devices. Finally, this review concludes with a discussion of challenges and future prospects, aiming to guide the development of Ni-based HER catalysts for industrial-scale hydrogen production via AEMWE.
+AD  - Chinese Acad Sci, Dalian Inst Chem Phys, Power Battery & Syst Res Ctr, State Key Lab Catalysis, Dalian, Peoples R ChinaC3  - Chinese Academy of SciencesC3  - Dalian Institute of Chemical Physics, CASFU  - Strategic Priority Research Program of the Chinese Academy of Sciences [XDB0600400]; Natural Science Foundation of Liaoning Province [2025BS0139]; Science and Technology Major Project of Liaoning Province [2024JH1/11700013]; State Key Laboratory of Catalysis [2024SKL-A-009]
+FX  - The authors thank the support of the Strategic Priority Research Program of the Chinese Academy of Sciences (XDB0600400), the Natural Science Foundation of Liaoning Province (2025BS0139), the Science and Technology Major Project of Liaoning Province (2024JH1/11700013), and the State Key Laboratory of Catalysis (2024SKL-A-009).
+PU  - WILEY-V C H VERLAG GMBH
+PI  - WEINHEIM
+PA  - POSTFACH 101161, 69451 WEINHEIM, GERMANY
+SN  - 0935-9648
+SN  - 1521-4095
+J9  - ADV MATER
+JI  - Adv. Mater.
+DA  - 2026 JAN 8
+PY  - 2026
+C7  - PMID 9885358
+DO  - 10.1002/adma.202520491
+C6  - JAN 2026
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:001656309300001
+N1  - Times Cited in Web of Science Core Collection:  0
+Total Times Cited:  0
+Cited Reference Count:  387
+ER  -
+
+TY  - JOUR
+AU  - Hu, RZ
+AU  - Wen, C
+AU  - Ye, ZX
+AU  - Qi, Y
+AU  - Zhang, BH
+AU  - Kang, K
+AU  - Gao, Y
+AU  - Wang, DP
+AU  - Tu, ZK
+TI  - A comprehensive review of flow channel designs and optimizations for water electrolysis technology
+T2  - APPLIED ENERGY
+LA  - English
+KW  - Hydrogen production
+KW  - Water electrolysis
+KW  - Flow channel
+KW  - Electrolytic efficiency
+KW  - ANION-EXCHANGE-MEMBRANE
+KW  - LIQUID/GAS DIFFUSION LAYERS
+KW  - HYDROGEN-PRODUCTION
+KW  - 2-PHASE FLOW
+KW  - 3-DIMENSIONAL SIMULATION
+KW  - HIGH-PRESSURE
+KW  - PERFORMANCE
+KW  - FIELD
+KW  - ENERGY
+KW  - ELECTROCATALYSTS
+AB  - Electrolysis of water to produce hydrogen is a rosy way to utilize renewable energy sources. In the common water electrolysis technologies: proton exchange membrane (PEM) water electrolysis, alkaline water electrolysis (AWE), solid oxide electrolysis cell (SOEC) and anion exchange membrane (AEM) water electrolysis, the flow channel directly correlates with the flow distribution and pressure drop. The uniform flow distribution ensures sufficient reactant supply and timely product discharge in the electrolyzer, which facilitates electrolytic efficiency and uniform temperature distribution, while the lower pressure drop reduces the energy consumption of pumping water. This paper introduces the researches related to the existing flow channel design in four water electrolysis technologies and compares the strengths and weaknesses of different designs, and discusses the objectives and optimization direction. Enhancing heat and mass transfer capability is the main goal of flow channel design, but this performance improvement is generally accompanied by an increase in pressure drop, which increases energy consumption. The choice of flow channel needs to take into account the advantages of all aspects of performance. Finally, the challenges encountered in the design of flow channels are pointed out and a prospect based on the newly introduced research methods is given.
+AD  - Huazhong Univ Sci & Technol, Sch Energy & Power Engn, Dept New Energy Sci & Engn, Wuhan 430074, Peoples R ChinaAD  - Huazhong Univ Sci & Technol, Sch Energy & Power Engn, State Key Lab Coal Combust, Wuhan 430074, Peoples R ChinaAD  - Power China HuBei Elect Engn Co Ltd, Wuhan 430074, Peoples R ChinaC3  - Huazhong University of Science & TechnologyC3  - Huazhong University of Science & TechnologyFU  - National Key Research and Development Program of China [2024YFB4006505]; National Natural Science Foundation of China [U24B2071]; Technology project of China Power Construction Co., Ltd. [DJ-ZDXM-2023-16]
+FX  - The authors would like to acknowledge the financial support of the National Key Research and Development Program of China (2024YFB4006505) , the National Natural Science Foundation of China (No. U24B2071) and the technology project of China Power Construction Co., Ltd. (DJ-ZDXM-2023-16) .
+PU  - ELSEVIER SCI LTD
+PI  - London
+PA  - 125 London Wall, London, ENGLAND
+SN  - 0306-2619
+SN  - 1872-9118
+J9  - APPL ENERG
+JI  - Appl. Energy
+DA  - DEC 1
+PY  - 2025
+VL  - 400
+C7  - 126643
+DO  - 10.1016/j.apenergy.2025.126643
+C6  - AUG 2025
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:001552319300001
+N1  - Times Cited in Web of Science Core Collection:  6
+Total Times Cited:  6
+Cited Reference Count:  133
+ER  -
+
+TY  - JOUR
+AU  - Peng, ZY
+AU  - Zhang, HQ
+AU  - Zhang, YQ
+AU  - Zhao, YN
+AU  - Chen, JM
+AU  - Wang, LL
+TI  - Strategies and Countermeasures Against Reverse Current for Enhanced Durability in Water Electrolysis Systems
+T2  - SMALL METHODS
+LA  - English
+KW  - renewable energy electrolysis
+KW  - reverse current
+KW  - water electrolysis
+KW  - ANION-EXCHANGE MEMBRANE
+KW  - RUTHENIUM DIOXIDE
+KW  - HYDROGEN-PRODUCTION
+KW  - BIPOLAR PLATE
+KW  - EFFICIENT
+KW  - ELECTROCATALYSTS
+KW  - LDH
+AB  - Reverse current, a detrimental phenomenon arising during shutdown or fluctuating input from renewable energy sources in water electrolysis, poses a critical threat to the longevity and efficiency of green hydrogen production systems. This current flows in the opposite direction to the normal operational current, instigating severe degradation of electrode materials, particularly at the cathode, and thereby diminishing hydrogen generation rates. Herein, the underlying electrochemical mechanisms of reverse current are comprehensively elucidated and critically assess its influence on electrode integrity and overall electrolyzer performance. Furthermore, state-of-the-art mitigation strategies are being explored and analyzed to counteract this damage, encompassing innovations from materials-level approaches (e.g., electrode modification via dopants and protective coatings) to system-level external regulation and control. This review bridges fundamental insights with practical engineering strategies (e.g., multifunctional dynamic protective layers and in situ and operando techniques) to guide the designs of electrolyzer to reduce damage from reverse current.
+AD  - Nanjing Univ Posts & Telecommun NJUPT, Coll Elect & Opt Engn, Nanjing 210023, Peoples R ChinaAD  - Nanjing Univ Posts & Telecommun NJUPT, Coll Flexible Elect Future Technol, Nanjing 210023, Peoples R ChinaAD  - Nanjing Univ Posts & Telecommun NJUPT, State Key Lab Organ Elect & Informat Displays, Nanjing 210023, Peoples R ChinaC3  - Nanjing University of Posts & TelecommunicationsC3  - Nanjing University of Posts & TelecommunicationsC3  - Nanjing University of Posts & TelecommunicationsFU  - Natural Science Foundation of China [22479079]; Science Foundation of Nanjing University of Posts and Telecommunications [NY219144, NY221046]; Natural Science Foundation of Jiangsu Province [BK20201381]
+FX  - This work was financially supported by the Natural Science Foundation of China (22479079), Natural Science Foundation of Jiangsu Province (BK20201381), and Science Foundation of Nanjing University of Posts and Telecommunications (NY219144, NY221046).
+PU  - WILEY-V C H VERLAG GMBH
+PI  - WEINHEIM
+PA  - POSTFACH 101161, 69451 WEINHEIM, GERMANY
+SN  - 2366-9608
+J9  - SMALL METHODS
+JI  - Small Methods
+DA  - DEC 1
+PY  - 2025
+VL  - 9
+IS  - 12
+DO  - 10.1002/smtd.202501816
+C6  - NOV 2025
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:001610197200001
+N1  - Times Cited in Web of Science Core Collection:  0
+Total Times Cited:  0
+Cited Reference Count:  116
+ER  -
+
+TY  - JOUR
+AU  - Chen, C
+AU  - Olu, PY
+AU  - Fan, RL
+AU  - Shen, MR
+TI  - Review of Ni-Based Materials for Industrial Alkaline Hydrogen Production
+T2  - CHEMSUSCHEM
+LA  - English
+KW  - Ni-based catalysts
+KW  - hydrogen production
+KW  - alkaline conditions
+KW  - industrial application
+KW  - NICKEL-BASED ELECTROCATALYSTS
+KW  - OXYGEN-EVOLUTION
+KW  - HIGHLY EFFICIENT
+KW  - WATER
+KW  - HETEROSTRUCTURE
+KW  - ARRAYS
+KW  - HETEROJUNCTION
+KW  - CORROSION
+KW  - CATHODES
+KW  - DESIGN
+AB  - Hydrogen has been recognized as a green energy carrier, which can relieve energy shortage and environmental pollution. Currently, alkaline water electrolysis (AWE) driven by renewable energy to produce large-scale green hydrogen is a mainstream technology. However, tardy cathodic hydrogen evolution reaction (HER) and stability issue of catalysts make it challenging to meet the industrial requirements. Ni-based materials have attracted wide attention, thanks to their low cost and rich tuning possibilities, and many efforts have focused on their activity and stability. However, due to the significant discrepancy between laboratory and industrial conditions, these catalysts have not been widely deployed in industrial AWE. In this review, we first introduce the differences between laboratory and industrial stage, especially concerning equipment, protocols and evaluation metrics. To shorten these gaps, some strategies are proposed to improve the activity and stability of the Ni-based catalysts. Besides, some key issues related to the catalysts in industrial AWE device are also emphasized, including reverse-current and foreign ions in the electrolyte. Finally, the challenges and outlooks on the industrial alkaline AWE are discussed.
+AD  - Soochow Univ, Collaborat Innovat Ctr Suzhou Nano Sci & Technol, Sch Phys Sci & Technol, Jiangsu Key Lab Frontier Mat Phys & Devices, 1 Shizi St, Suzhou 215006, Peoples R ChinaAD  - John Cockerill Hydrogen SA, 1 Rue Jean Potier, B-4100 Seraing, BelgiumC3  - Soochow University - ChinaFU  - National Natural Science Foundation of China [52002259, 52372216, 52272228]; Key project of carbon peak carbon neutralization technology support from Suzhou Science and Technology Bureau [ST202227]
+FX  - This work was supported by National Natural Science Foundation of China (Grant No. 52002259, 52372216, and 52272228), and a key project of carbon peak carbon neutralization technology support from Suzhou Science and Technology Bureau (Grant No. ST202227).
+PU  - WILEY-V C H VERLAG GMBH
+PI  - WEINHEIM
+PA  - POSTFACH 101161, 69451 WEINHEIM, GERMANY
+SN  - 1864-5631
+SN  - 1864-564X
+J9  - CHEMSUSCHEM
+JI  - ChemSusChem
+DA  - FEB 1
+PY  - 2025
+VL  - 18
+IS  - 3
+DO  - 10.1002/cssc.202401415
+C6  - NOV 2024
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:001354298400001
+N1  - Times Cited in Web of Science Core Collection:  10
+Total Times Cited:  10
+Cited Reference Count:  113
+ER  -
+
+TY  - JOUR
+AU  - Brauns, J
+AU  - Turek, T
+TI  - Alkaline Water Electrolysis Powered by Renewable Energy: A Review
+T2  - PROCESSES
+LA  - English
+KW  - alkaline water electrolysis
+KW  - hydrogen
+KW  - renewable energy
+KW  - sustainable
+KW  - dynamic
+KW  - fluctuations
+KW  - wind
+KW  - solar
+KW  - photovoltaic
+KW  - limitations
+KW  - HYDROGEN-PRODUCTION
+KW  - SALTING-OUT
+KW  - TO-GAS
+KW  - IONIC LIQUIDS
+KW  - OXYGEN EVOLUTION
+KW  - STORAGE
+KW  - PERFORMANCE
+KW  - SYSTEM
+KW  - ELECTRODES
+KW  - EFFICIENCY
+AB  - Alkaline water electrolysis is a key technology for large-scale hydrogen production powered by renewable energy. As conventional electrolyzers are designed for operation at fixed process conditions, the implementation of fluctuating and highly intermittent renewable energy is challenging. This contribution shows the recent state of system descriptions for alkaline water electrolysis and renewable energies, such as solar and wind power. Each component of a hydrogen energy system needs to be optimized to increase the operation time and system efficiency. Only in this way can hydrogen produced by electrolysis processes be competitive with the conventional path based on fossil energy sources. Conventional alkaline water electrolyzers show a limited part-load range due to an increased gas impurity at low power availability. As explosive mixtures of hydrogen and oxygen must be prevented, a safety shutdown is performed when reaching specific gas contamination. Furthermore, the cell voltage should be optimized to maintain a high efficiency. While photovoltaic panels can be directly coupled to alkaline water electrolyzers, wind turbines require suitable converters with additional losses. By combining alkaline water electrolysis with hydrogen storage tanks and fuel cells, power grid stabilization can be performed. As a consequence, the conventional spinning reserve can be reduced, which additionally lowers the carbon dioxide emissions.
+AD  - Tech Univ Clausthal, Inst Chem & Elect Proc Engn, Leibnizstr 17, D-38678 Clausthal Zellerfeld, GermanyC3  - TU ClausthalFU  - Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) [290019031, 391348959]
+FX  - This work is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) Project numbers: 290019031; 391348959.
+PU  - MDPI
+PI  - BASEL
+PA  - MDPI AG, Grosspeteranlage 5, CH-4052 BASEL, SWITZERLAND
+SN  - 2227-9717
+J9  - PROCESSES
+JI  - Processes
+DA  - FEB
+PY  - 2020
+VL  - 8
+IS  - 2
+C7  - 248
+DO  - 10.3390/pr8020248
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:000521167900047
+N1  - Times Cited in Web of Science Core Collection:  561
+Total Times Cited:  621
+Cited Reference Count:  94
+ER  -
+
+TY  - JOUR
+AU  - Kundu, A
+AU  - Mallick, S
+AU  - Ghora, S
+AU  - Raj, CR
+TI  - Advanced Oxygen Electrocatalyst for Air-Breathing Electrode in Zn-Air Batteries
+T2  - ACS APPLIED MATERIALS & INTERFACES
+LA  - English
+KW  - oxygen electrocatalyst
+KW  - oxygen reduction
+KW  - oxygen evolution
+KW  - bifunctional
+KW  - zinc-air battery
+KW  - N-DOPED CARBON
+KW  - HIGHLY EFFICIENT ELECTROCATALYST
+KW  - REDUCTION REACTION ACTIVITY
+KW  - TRANSITION-METAL NITRIDES
+KW  - FUEL-CELL
+KW  - ACTIVE-SITES
+KW  - BIFUNCTIONAL CATALYST
+KW  - ALLOY NANOPARTICLES
+KW  - METHANOL OXIDATION
+KW  - CATHODE CATALYST
+AB  - The electrochemical reduction of oxygen to water and the evolution of oxygen from water are two important electrode reactions extensively studied for the development of electrochemical energy conversion and storage technologies based on oxygen electrocatalysis. The development of an inexpensive, highly active, and durable nonprecious-metal-based oxygen electrocatalyst is indispensable for emerging energy technologies, including anion exchange membrane fuel cells, metal-air batteries (MABs), water electrolyzers, etc. The activity of an oxygen electrocatalyst largely decides the overall energy storage performance of these devices. Although the catalytic activities of Pt and Ru/Ir-based catalysts toward an oxygen reduction reaction (ORR) and an oxygen evolution reaction (OER) are known, the high cost and lack of durability limit their extensive use for practical applications. This review article highlights the oxygen electrocatalytic activity of the emerging non-Pt and non-Ru/Ir oxygen electrocatalysts including transition-metal-based random alloys, intermetallics, metal-coordinated nitrogendoped carbon (M-N-C), and transition metal phosphides, nitrides, etc., for the development of an air-breathing electrode for aqueous primary and secondary zinc-air batteries (ZABs). Rational surface and chemical engineering of these electrocatalysts is required to achieve the desired oxygen electrocatalytic activity. The surface engineering increases the number of active sites, whereas the chemical engineering enhances the intrinsic activity of the catalyst. The encapsulation or integration of the active catalyst with undoped or heteroatom-doped carbon nanostructures affords an enhanced durability to the active catalyst. In many cases, the synergistic effect between the heteroatom-doped carbon matrix and the active catalyst plays an important role in controlling the catalytic activity. The ORR activity of these catalysts is evaluated in terms of onset potential, number of electrons transferred, limiting current density, and durability. The bifunctional oxygen electrocatalytic activity and ZAB performance, on the other hand, are measured in terms of potential gap between the ORR and OER, Delta E = E-j10(OER) - E-1/2(ORR), specific capacity, peak power density, open circuit voltage, voltaic efficiency, and charge-discharge cycling stability. The nonprecious metal electrocatalyst-based ZABs are very promising and they deliver high power density, specific capacity, and round-trip efficiency. The active site for oxygen electrocatalysis and challenges associated with carbon support is briefly addressed. Despite the considerable progress made with the emerging electrocatalysts in recent years, several issues are yet to be addressed to achieve the commercial potential of rechargeable ZAB for practical applications.
+AD  - Indian Inst Technol, Dept Chem, Funct Mat & Electrochem Lab, Kharagpur 721302, W Bengal, IndiaC3  - Indian Institute of Technology System (IIT System)C3  - Indian Institute of Technology (IIT) - KharagpurFU  - Science and Engineering Research Board (SERB) [CRG/2019/001332]; CSIR [01(2888)/17/EMR-II]; National Postdoctoral Fellowship from SERB [PDF/2018/003346]
+FX  - The author acknowledges the financial support from Science and Engineering Research Board (SERB) (CRG/2019/001332), and CSIR (Grant 01(2888)/17/EMR-II), India. Dr. Aniruddha Kundu acknowledges the receipt of National Postdoctoral Fellowship from SERB (PDF/2018/003346).
+PU  - AMER CHEMICAL SOC
+PI  - WASHINGTON
+PA  - 1155 16TH ST, NW, WASHINGTON, DC 20036 USA
+SN  - 1944-8244
+SN  - 1944-8252
+J9  - ACS APPL MATER INTER
+JI  - ACS Appl. Mater. Interfaces
+DA  - SEP 1
+PY  - 2021
+VL  - 13
+IS  - 34
+SP  - 40172
+EP  - 40199
+DO  - 10.1021/acsami.1c08462
+C6  - AUG 2021
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:000693050200002
+N1  - Times Cited in Web of Science Core Collection:  148
+Total Times Cited:  157
+Cited Reference Count:  166
+ER  -
+
+TY  - JOUR
+AU  - Anand, C
+AU  - Chandraja, B
+AU  - Nithiya, P
+AU  - Akshaya, M
+AU  - Tamizhdurai, P
+AU  - Shoba, G
+AU  - Subramani, A
+AU  - Kumaran, R
+AU  - Yadav, KK
+AU  - Gacem, A
+AU  - Bhutto, JK
+AU  - Alreshidi, MA
+AU  - Alam, MW
+TI  - Green hydrogen for a sustainable future: A review of production methods, innovations, and applications
+T2  - INTERNATIONAL JOURNAL OF HYDROGEN ENERGY
+LA  - English
+KW  - Green hydrogen
+KW  - Sustainability
+KW  - Environmental impacts
+KW  - Emissions-free
+KW  - Cleaner future
+KW  - OXYGEN EVOLUTION
+KW  - TEMPERATURE ELECTROLYSIS
+KW  - WATER ELECTROLYSIS
+KW  - FUEL-CELLS
+KW  - CHALLENGES
+KW  - ADVANCEMENTS
+KW  - BIOMASS
+KW  - ENERGY
+KW  - ALGAE
+AB  - Green hydrogen is essential for advancing sustainable energy systems and achieving a low-carbon economy. Various production methods have been developed, each with distinct technological characteristics, efficiency levels, and environmental impacts. Conventional and advanced approaches include water electrolysis such as alkaline electrolysis, proton exchange membrane (PEM) electrolysis, and solid oxide electrolysis (SOE)-as well as innovative processes like biological hydrogen production through biophotolysis, fermentation, biological water-gas shift reactions, and microbial fuel cells. Other significant techniques encompass thermochemical hydrogen production methods like biomass gasification, steam methane reforming, and thermochemical cycles, alongside photoelectrochemical (PEC) water splitting systems, including single-junction, dual-junction, integrated PEC cells, and photocatalytic PEC cells. Emerging plasma-assisted water splitting methods, such as corona discharge, dielectric barrier discharge (DBD), and microwave plasma-assisted splitting, also offer promising alternatives for efficient hydrogen production. Among these methods, water electrolysis powered by renewable electricity holds substantial potential for large-scale green hydrogen production. Photoelectrochemical water splitting and plasma-assisted methods have demonstrated unique advantages in terms of sustainability and integration with renewable energy sources. The scalability, cost-effectiveness, and environmental benefits of these processes depend on technological advancements in reactor design, materials, and catalytic efficiency. Integrating green hydrogen with carbon sequestration technologies further enhances its role in reducing carbon footprints and promoting sustainability. Sustainable applications extend to energy storage solutions, where green hydrogen can store surplus renewable energy, and transportation, particularly in fuel cell vehicles, promoting zero-emission mobility. This review examines these hydrogen production methods, highlighting their efficiencies, challenges, and recent innovations that are pivotal for achieving competitive, large-scale green hydrogen production. Furthermore, the integration of green hydrogen with carbon sequestration technologies is discussed, underscoring its role in reducing carbon footprints and enhancing sustainability.
+AD  - Univ Madras Chennai, Dwaraka Doss Goverdhan Doss Vaishnav Coll Autonomo, Dept Chem, 833 Gokul Bagh,EVR Periyar Rd, Chennai 600106, Tamil Nadu, IndiaAD  - Univ Madras Chennai, Dwaraka Doss Goverdhan Doss Vaishnav Coll, Dept Biotechnol, 833 Gokul Bagh,EVR Periyar Rd, Chennai 600106, Tamil Nadu, IndiaAD  - Dwaraka Doss Goverdhan Doss Vaishnav Coll Autonomo, Dept Bio Chem, Chennai 600106, Tamil Nadu, IndiaAD  - Saveetha Univ, Saveetha Inst Med & Tech Sci SIMATS, Saveetha Sch Engn, Dept VLSI Microelect, Chennai 602105, Tamil Nadu, IndiaAD  - Al Ayen Univ, Sci Res Ctr, Environm & Atmospher Sci Res Grp, Nasiriyah 64001, Thi Qar, IraqAD  - Univ 20 Aout 1955, Fac Sci, Dept Phys, Skikda, AlgeriaAD  - King Khalid Univ, Coll Engn, Dept Elect Engn, Abha, Saudi ArabiaAD  - Univ Hail, Coll Sci, Dept Chem, Hail 81441, Saudi ArabiaAD  - King Faisal Univ, Coll Sci, Dept Phys, Al Hasa 31982, Saudi ArabiaC3  - University of MadrasC3  - University of MadrasC3  - Saveetha Institute of Medical & Technical ScienceC3  - Saveetha School of EngineeringC3  - Al-Ayen UniversityC3  - Universite de SkikdaC3  - King Khalid UniversityC3  - University Ha'ilC3  - King Faisal UniversityFU  - Deanship of Scientific Research at King Khalid University, Saudi Arabia [RGP 2/55/45]
+FX  - The authors extend their appreciation to the Deanship of Scientific Research at King Khalid University, Saudi Arabia for funding this work through the Research Group Program under Grant No: RGP 2/55/45.
+PU  - PERGAMON-ELSEVIER SCIENCE LTD
+PI  - OXFORD
+PA  - THE BOULEVARD, LANGFORD LANE, KIDLINGTON, OXFORD OX5 1GB, ENGLAND
+SN  - 0360-3199
+SN  - 1879-3487
+J9  - INT J HYDROGEN ENERG
+JI  - Int. J. Hydrog. Energy
+DA  - MAR 20
+PY  - 2025
+VL  - 111
+SP  - 319
+EP  - 341
+DO  - 10.1016/j.ijhydene.2025.02.257
+C6  - FEB 2025
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:001435745200001
+N1  - Times Cited in Web of Science Core Collection:  93
+Total Times Cited:  97
+Cited Reference Count:  150
+ER  -
+
+TY  - JOUR
+AU  - Bespalko, S
+AU  - Mizeraczyk, J
+TI  - Overview of the Hydrogen Production by Plasma-Driven Solution Electrolysis
+T2  - ENERGIES
+LA  - English
+KW  - electrolytic solution
+KW  - plasma electrolysis
+KW  - contact glow-discharge electrolysis (CGDE)
+KW  - plasma-driven solution electrolysis (PDSE)
+KW  - hydrogen
+KW  - hydrogen production
+KW  - hydrogen production rate
+KW  - hydrogen production energy yield
+KW  - GLOW-DISCHARGE ELECTROLYSIS
+KW  - CHEMICAL-REACTIONS
+KW  - PULSED DISCHARGE
+KW  - GENERATION
+KW  - BEHAVIOR
+KW  - ORIGIN
+KW  - ENERGY
+KW  - GAS
+AB  - This paper reviews the progress in applying the plasma-driven solution electrolysis (PDSE), which is also referred to as the contact glow-discharge electrolysis (CGDE) or plasma electrolysis, for hydrogen production. The physicochemical processes responsible for the formation of PDSE and effects occurring at the discharge electrode in the cathodic and anodic regimes of the PDSE operation are described. The influence of the PDSE process parameters, especially the discharge polarity, magnitude of the applied voltage, type and concentration of the typical electrolytic solutions (K2CO3, Na2CO3, KOH, NaOH, H2SO4), presence of organic additives (CH3OH, C2H5OH, CH3COOH), temperature of the electrolytic solution, the active length and immersion depth of the discharge electrode into the electrolytic solution, on the energy efficiency (%), energy yield (g(H-2)/kWh), and hydrogen production rate (g(H-2)/h) is presented and discussed. This analysis showed that in the cathodic regime of PDSE, the hydrogen production rate is 33.3 times higher than that in the anodic regime of PDSE, whereas the Faradaic and energy efficiencies are 11 and 12.5 times greater, respectively, than that in the anodic one. It also revealed the energy yield of hydrogen production in the cathodic regime of PDSE in the methanol-water mixture, as the electrolytic solution is 3.9 times greater compared to that of the alkaline electrolysis, 4.1 times greater compared to the polymer electrolyte membrane electrolysis, 2.8 times greater compared to the solid oxide electrolysis, 1.75 times greater than that obtained in the microwave (2.45 GHz) plasma, and 5.8% greater compared to natural gas steam reforming.
+AD  - Res & Innovat Ctr Pro Akad, Innowacyjna St 9-11, PL-95050 Konstantynow Lodzki, PolandAD  - Gdynia Maritime Univ, Dept Marine Elect, Morska St 83, PL-81225 Gdynia, PolandC3  - Gdynia Maritime UniversityFU  - Ministry of Science and Higher Education [006/RID/2018/19]; Polish National Agency for Academic Exchange (NAWA) [PPN/SEL/2020/1/00004/U/00001]
+FX  - The project was financed within the program of the Ministry of Science and Higher Education called "Regionalna Inicjatywa Doskonalosci", in the years 2019-2022; the project number was 006/RID/2018/19 and the sum of financing was PLN 11,870,000. Sergii Bespalko would like to thank the Polish National Agency for Academic Exchange (NAWA) for the funding under the Ulam Program-Seal of Excellence (the grant agreement no. PPN/SEL/2020/1/00004/U/00001).
+PU  - MDPI
+PI  - BASEL
+PA  - MDPI AG, Grosspeteranlage 5, CH-4052 BASEL, SWITZERLAND
+SN  - 1996-1073
+J9  - ENERGIES
+JI  - Energies
+DA  - OCT
+PY  - 2022
+VL  - 15
+IS  - 20
+C7  - 7508
+DO  - 10.3390/en15207508
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:000872657900001
+N1  - Times Cited in Web of Science Core Collection:  19
+Total Times Cited:  20
+Cited Reference Count:  91
+ER  -
+
