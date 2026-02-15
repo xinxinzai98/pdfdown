@@ -40,7 +40,11 @@ Thumbs.db
 ris_downloads/*.pdf
 ris_downloads/*.log
 downloads/*.pdf
+full_downloads/*.pdf
+browser_downloads/*.pdf
+wiley_downloads/*.pdf
 *.log
+*.html
 
 # Test output
 test_output/
