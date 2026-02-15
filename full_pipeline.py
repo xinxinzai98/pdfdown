@@ -457,8 +457,157 @@ async def run_browser_download(
     return new_success
 
 
+def generate_manual_download_page(
+    papers: List[Dict], failed_dois: Set[str], output_dir: str
+):
+    if not failed_dois:
+        return
+
+    html = """<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手动下载 - 失败文献列表</title>
+    <style>
+        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+        body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 20px; }}
+        .container {{ max-width: 1000px; margin: 0 auto; }}
+        h1 {{ color: #333; margin-bottom: 10px; }}
+        .summary {{ background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #ffc107; }}
+        .paper-card {{ background: white; border-radius: 8px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }}
+        .paper-card:hover {{ box-shadow: 0 4px 8px rgba(0,0,0,0.15); }}
+        .doi {{ font-family: monospace; color: #666; font-size: 14px; margin-bottom: 8px; }}
+        .title {{ font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px; line-height: 1.4; }}
+        .buttons {{ display: flex; gap: 10px; flex-wrap: wrap; }}
+        .btn {{ display: inline-block; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; transition: all 0.2s; cursor: pointer; border: none; }}
+        .btn-primary {{ background: #0066cc; color: white; }}
+        .btn-primary:hover {{ background: #0052a3; }}
+        .btn-secondary {{ background: #6c757d; color: white; }}
+        .btn-secondary:hover {{ background: #5a6268; }}
+        .btn-success {{ background: #28a745; color: white; }}
+        .btn-success:hover {{ background: #218838; }}
+        .publisher {{ display: inline-block; padding: 2px 8px; background: #e9ecef; border-radius: 4px; font-size: 12px; color: #495057; margin-bottom: 10px; }}
+        .downloaded {{ background: #d4edda; border-left: 4px solid #28a745; }}
+        .downloaded .title {{ color: #155724; }}
+        .footer {{ text-align: center; margin-top: 30px; color: #666; font-size: 14px; }}
+        .status {{ font-size: 12px; margin-top: 10px; }}
+        .status-downloaded {{ color: #28a745; }}
+        .status-pending {{ color: #dc3545; }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 论文下载助手</h1>
+        <div class="summary">
+            <strong>📊 统计:</strong> 共 {total} 篇文献，成功下载 {success} 篇，需手动下载 {failed} 篇
+        </div>
+        
+        <h2 style="margin: 20px 0 15px; color: #dc3545;">❌ 需要手动下载的文献</h2>
+        {failed_papers}
+        
+        <h2 style="margin: 30px 0 15px; color: #28a745;">✅ 已成功下载</h2>
+        {success_papers}
+        
+        <div class="footer">
+            <p>PDF 文件保存在: {output_dir}</p>
+        </div>
+    </div>
+    <script>
+        function markDownloaded(btn, doi) {{
+            btn.innerHTML = '已下载';
+            btn.className = 'btn btn-success';
+            btn.onclick = null;
+            localStorage.setItem('downloaded_' + doi, 'true');
+        }}
+        function loadState() {{
+            document.querySelectorAll('[data-doi]').forEach(function(el) {{
+                var doi = el.dataset.doi;
+                if (localStorage.getItem('downloaded_' + doi) === 'true') {{
+                    var btn = el.querySelector('.btn-primary');
+                    if (btn) {{
+                        btn.innerHTML = '已下载';
+                        btn.className = 'btn btn-success';
+                        btn.onclick = null;
+                    }}
+                    el.classList.add('downloaded');
+                    var status = el.querySelector('.status');
+                    if (status) {{
+                        status.className = 'status status-downloaded';
+                        status.innerHTML = '已标记为下载完成';
+                    }}
+                }}
+            }});
+        }}
+        loadState();
+    </script>
+</body>
+</html>
+"""
+
+    def render_paper(paper: Dict, is_failed: bool) -> str:
+        doi = paper["doi"]
+        title = paper.get("title", "N/A")
+        if len(title) > 100:
+            title = title[:100] + "..."
+        publisher_info = get_publisher_info(doi)
+        publisher = publisher_info.get("name", "unknown")
+        manual_url = publisher_info.get("manual_url", f"https://doi.org/{doi}")
+
+        card_class = "" if is_failed else "downloaded"
+        status_class = "status-pending" if is_failed else "status-downloaded"
+        status_text = "⏳ 等待手动下载" if is_failed else "✅ 已下载"
+
+        buttons = ""
+        if is_failed:
+            buttons = f"""
+            <div class="buttons">
+                <a href="{manual_url}" target="_blank" class="btn btn-primary" data-doi="{doi}" onclick="markDownloaded(this, '{doi}')">📥 打开下载页</a>
+                <a href="https://sci-hub.se/{doi}" target="_blank" class="btn btn-secondary">🔓 Sci-Hub</a>
+                <a href="https://www.google.com/search?q={quote(title)}" target="_blank" class="btn btn-secondary">🔍 Google 搜索</a>
+            </div>
+            """
+
+        return f"""
+        <div class="paper-card {card_class}" data-doi="{doi}">
+            <div class="publisher">{publisher.upper()}</div>
+            <div class="doi">DOI: {doi}</div>
+            <div class="title">{title}</div>
+            {buttons}
+            <div class="status {status_class}">{status_text}</div>
+        </div>
+        """
+
+    failed_papers_html = ""
+    for doi in failed_dois:
+        paper = next((p for p in papers if p["doi"] == doi), None)
+        if paper:
+            failed_papers_html += render_paper(paper, True)
+
+    success_papers_html = ""
+    for paper in papers:
+        if paper["doi"] not in failed_dois:
+            success_papers_html += render_paper(paper, False)
+
+    html = html.format(
+        total=len(papers),
+        success=len(papers) - len(failed_dois),
+        failed=len(failed_dois),
+        failed_papers=failed_papers_html,
+        success_papers=success_papers_html,
+        output_dir=os.path.abspath(output_dir),
+    )
+
+    html_path = os.path.join(output_dir, "manual_download.html")
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write(html)
+
+    return html_path
+
+
 async def main():
     import argparse
+    import webbrowser
 
     parser = argparse.ArgumentParser(description="完整论文下载流程")
     parser.add_argument("ris_file", help="RIS 文件路径")
@@ -466,6 +615,9 @@ async def main():
     parser.add_argument("--cdp-url", default="http://127.0.0.1:9222", help="CDP 地址")
     parser.add_argument("--skip-public", action="store_true", help="跳过公开渠道")
     parser.add_argument("--skip-browser", action="store_true", help="跳过浏览器官方")
+    parser.add_argument(
+        "--no-browser", action="store_true", help="不自动打开手动下载页面"
+    )
 
     args = parser.parse_args()
 
@@ -509,20 +661,17 @@ async def main():
     print(f"成功率: {len(all_success) / len(papers) * 100:.1f}%")
 
     if failed_dois:
-        print("\n❌ 以下论文下载失败，请手动下载:")
-        for doi in failed_dois:
-            paper = next((p for p in papers if p["doi"] == doi), None)
-            if paper:
-                title = paper.get("title", "N/A")
-                if len(title) > 60:
-                    title = title[:60] + "..."
-                publisher_info = get_publisher_info(doi)
-                manual_url = publisher_info.get("manual_url", f"https://doi.org/{doi}")
-                print(f"\n  📄 DOI: {doi}")
-                print(f"     标题: {title}")
-                print(f"     手动下载: {manual_url}")
+        html_path = generate_manual_download_page(papers, failed_dois, args.output)
+        print(f"\n❌ 有 {len(failed_dois)} 篇论文需要手动下载")
+        print(f"📄 已生成手动下载页面: {html_path}")
 
-    print(f"\n✅ 下载成功的文件保存在: {args.output}")
+        if not args.no_browser:
+            print("🌐 正在打开浏览器...")
+            webbrowser.open(f"file://{os.path.abspath(html_path)}")
+    else:
+        print("\n✅ 所有论文下载成功！")
+
+    print(f"\n📁 下载文件保存在: {args.output}")
 
 
 if __name__ == "__main__":
